@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="node_modules/fabric/dist/fabric.js"></script>
+</head>
+
+<body>
+    <canvas id="canvas" width="1024" height="768" style="border: 2px solid green;"></canvas>
+    <script>
+        const canvas = new fabric.Canvas('canvas');
+
+        var rect = new fabric.Rect({
+            top: 100,
+            left: 100,
+            width: 60,
+            height: 70,
+            fill: 'red'
+        });
+
+        canvas.add(rect);
+
+        const text = new fabric.Text("This is Editor 2.0 banner!", {
+            fontFamily: 'Comic Sans',
+            fontSize: 20,
+            fontWeight: 'bold',
+            shadow: 'rgba(100,100,100,0.9) 5px 5px 5px',
+            fontStyle: 'italic',
+            textAlign: 'right',
+            fill: 'green'
+
+
+        });
+
+        canvas.add(text);
+
+        fabric.Image.fromURL('https://www.ars.usda.gov/ARSUserFiles/oc/images/photos/gallery/camera.jpg', oImg => {
+            canvas.add(oImg);
+        },
+            {
+                left: 100,
+                top: 100,
+                angle: 30,
+                opacity: 0.85
+            });
+
+        // http://fabricjs.com/fabric-intro-part-2
+        // http://fabricjs.com/docs/fabric.Image.html
+    </script>
+</body>
+
+</html>
